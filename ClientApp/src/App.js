@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router';
 import { Layout } from './components/Layout';
-import { Home } from './components/Home';
+import  Home  from './components/Home';
 import { FetchData } from './components/FetchData';
 import { Counter } from './components/Counter';
 import { Games } from './components/Games';
 import { Penalty } from './components/Penalty';
-import { Quiz } from './components/Quiz'; 
+import Quiz  from './components/Quiz'; 
 import { Community } from './components/Community';
 
 import './custom.css'

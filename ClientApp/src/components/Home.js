@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import background from '../images/Home-background.jpg';
 import {BackgroundImg, HomeBox, Button, ButtonLink, Wrapper} from '../components-styles/Home.style';
 
-export class Home extends Component {
-  static displayName = Home.name;
-
-  render () {
+function Home() {
     return (
       <BackgroundImg style={{backgroundImage: `url(${background})`}}>
             <Wrapper>
@@ -18,5 +15,7 @@ export class Home extends Component {
             </Wrapper>
       </BackgroundImg>
     );
-  }
 }
+
+
+export default Home

@@ -5,7 +5,7 @@ import LOGO from '../images/The-Treble-Logo.png'
 
 function NavBar() {
 
-    const [user, setUser] = useState();
+    const [user, setUser] = useState(); 
     
     return (
         <Nav>
