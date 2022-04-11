@@ -1,0 +1,53 @@
+﻿.controlgoal {
+	background-color: transparent;
+	position: absolute;
+	margin-top: -42em;
+	margin-left: 37em;
+	color: white;
+	text-align: center;
+}
+
+.right {
+	background-color: transparent;
+	position: absolute;
+	margin-top: -15em;
+	margin-left: 50em;
+	color: white;
+	text-align: center;
+	font-size: 25px;
+}
+
+.left {
+	background-color: transparent;
+	position: absolute;
+	margin-top: 5em;
+	margin-left: -15em;
+	color: white;
+	text-align: center;
+	font-size: 25px;
+	z-index: 2;
+}
+
+.ground {
+	width: 100vw;
+	height: 99vh;
+	z-index: 1;
+}
+
+.ball {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;	
+	background-color: white;
+	border: none;
+	position: absolute;
+	left: 55em;
+	bottom: 2em;
+	cursor: pointer;
+}
+
+
+
+
+
+
