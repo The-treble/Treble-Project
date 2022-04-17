@@ -9,6 +9,9 @@ export const Background = styled.div`
     align-items: center;
     justify-content: center;
     height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 `
 
 export const Wrapper = styled.div`
