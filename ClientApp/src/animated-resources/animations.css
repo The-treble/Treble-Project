@@ -1,0 +1,180 @@
+#ball.rightTop{
+    animation: ball-right-top 1s ease-in;
+    transform: rotateZ(-60deg) translateY(20%) translateX(8%);
+}
+
+#ball.rightMiddle{
+    animation: ball-right-middle 1s ease-in;
+    transform: rotateZ(-60deg) translateY(35%) translateX(0%);
+}
+
+#ball.rightBottom{
+    animation: ball-right-bottom 1s ease-in;
+    transform: rotateZ(-57deg) translateY(35%) translateX(-10%);
+}
+
+#ball.centerTop{
+    animation: ball-center-top 1s ease-in;
+    transform: rotateZ(-45deg) translateY(-25%) translateX(10%);   
+}
+
+#ball.centerMiddle {
+    animation: ball-center-middle 1s ease-in;
+    transform: rotateZ(-50deg) translateY(-20%) translateX(-12%);
+}
+
+#ball.centerBottom{
+    animation: ball-center-bottom 1s ease-in;
+    transform: rotateZ(-40deg) translateY(-10%) translateX(-10%);
+}
+
+#ball.leftTop{
+    animation: ball-left-top 1s ease-in;
+    transform: rotateZ(35deg) translateY(-90%) translateX(-15%);
+}
+
+#ball.leftMiddle{
+    animation: ball-left-middle 1s ease-in;
+    transform: rotateZ(15deg) translateY(-70%) translateX(-10%);
+}
+
+#ball.leftBottom{
+    animation: ball-left-bottom 1s ease-in;
+    transform: rotateZ(5deg) translateY(-45%) translateX(-15%);
+}
+
+@keyframes ball-right-top {
+    from {
+        transform: rotateZ(0deg) translateY(0%) translateX(0%);
+    }
+    to {
+        transform: rotateZ(-60deg) translateY(20%) translateX(8%);
+    }
+}
+
+@keyframes ball-right-middle {
+    from {
+        transform: rotateZ(0deg) translateY(0%) translateX(0%);
+    }
+    to {
+        transform: rotateZ(-60deg) translateY(35%) translateX(0%);
+    }
+}
+
+@keyframes ball-right-bottom {
+    from {
+        transform: rotateZ(0deg) translateY(0%) translateX(0%);
+    }
+    to {
+        transform: rotateZ(-57deg) translateY(35%) translateX(-10%);
+    }
+}
+
+@keyframes ball-center-top {
+    from {
+        transform: rotateZ(0deg) translateY(0%) translateX(0%);
+    }
+    to {
+        transform: rotateZ(-45deg) translateY(-25%) translateX(10%);
+    }
+}
+
+@keyframes ball-center-middle {
+    from {
+        transform: rotateZ(0deg) translateY(0%) translateX(0%);
+    }
+    to {
+        transform: rotateZ(-50deg) translateY(-20%) translateX(-12%);
+    }
+}
+
+@keyframes ball-center-bottom {
+    from {
+        transform: rotateZ(0deg) translateY(0%) translateX(0%);
+    }
+    to {
+        transform: rotateZ(-40deg) translateY(-10%) translateX(-10%);
+    }
+}
+
+@keyframes ball-left-top {
+    from {
+        transform: rotateZ(0deg) translateY(0%) translateX(0%);
+    }
+    to {
+        transform: rotateZ(35deg) translateY(-90%) translateX(-15%);
+    }
+}
+
+@keyframes ball-left-middle {
+    from {
+        transform: rotateZ(0deg) translateY(0%) translateX(0%);
+    }
+    to {
+        transform: rotateZ(15deg) translateY(-70%) translateX(-10%);
+    }
+}
+
+@keyframes ball-left-bottom {
+    from {
+        transform: rotateZ(0deg) translateY(0%) translateX(0%);
+    }
+    to {
+        transform: rotateZ(5deg) translateY(-45%) translateX(-15%);
+    }
+}
+
+
+#standing-keeper.animate{
+    animation: standing-keeper 1s ease-out;
+}
+
+@keyframes standing-keeper {
+    from {
+        transform: rotateZ(0deg) rotateX(0deg) translateY(0%) translateX(0%);
+    }
+    to {
+        transform: rotateZ(20deg) rotateX(-20deg) translateY(-40%) translateX(15%);
+    }
+}
+
+#left-leg.animate{
+    animation: legs 0.5s linear alternate;
+    transform-origin: center;
+}
+
+#right-leg.animate{
+    animation: legs 0.5s linear alternate;
+    transform-origin: center;
+}
+
+@keyframes legs {
+    from {
+        transform: rotateX(0deg);
+    }
+    to {
+        transform: rotateX(20deg);
+    }
+}
+
+#torso-head.animate {
+    animation: torso 0.5s linear;
+    transform-origin: center;
+}
+
+@keyframes torso {
+    from {
+        transform: rotateX(0deg);
+    }
+    to{
+        transform: rotateX(-20deg);
+    }
+}
+
+#right-jump{
+    opacity: 0;
+}
+
+#left-jump{
+    opacity: 0;
+}
