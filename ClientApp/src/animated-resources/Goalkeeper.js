@@ -1,10 +1,7 @@
 import './animations.css';
+import { useState } from 'react';
 
 export const Goalkeeper = () => {
-    // function rightTop(){
-    //     document.getElementById('standing-keeper').classList.add('animate'); 
-    //     document.getElementById('ball').classList.add('ballAnimation');
-    // }
 
     function shoot(buton){
         if(buton.target.className === 'buton1'){
@@ -17,6 +14,17 @@ export const Goalkeeper = () => {
             document.getElementById('ball').classList.remove('rightTop');
             document.getElementById('ball').classList.remove('rightMiddle');
             document.getElementById('ball').classList.remove('rightBottom');
+
+            document.getElementById('standing-keeper').classList.add('leftTop');
+            document.getElementById('standing-keeper').classList.remove('leftMiddle');
+            document.getElementById('standing-keeper').classList.remove('leftBottom');
+            document.getElementById('standing-keeper').classList.remove('centerTop');
+            document.getElementById('standing-keeper').classList.remove('centerMiddle');
+            document.getElementById('standing-keeper').classList.remove('centerBottom');
+            document.getElementById('standing-keeper').classList.remove('rightTop');
+            document.getElementById('standing-keeper').classList.remove('rightMiddle');
+            document.getElementById('standing-keeper').classList.remove('rightBottom');
+
         }if(buton.target.className === 'buton2'){
             document.getElementById('ball').classList.add('leftMiddle');
             document.getElementById('ball').classList.remove('leftTop');
@@ -27,6 +35,16 @@ export const Goalkeeper = () => {
             document.getElementById('ball').classList.remove('rightTop');
             document.getElementById('ball').classList.remove('rightMiddle');
             document.getElementById('ball').classList.remove('rightBottom');
+
+            document.getElementById('standing-keeper').classList.add('leftMiddle');
+            document.getElementById('standing-keeper').classList.remove('leftTop');
+            document.getElementById('standing-keeper').classList.remove('leftBottom');
+            document.getElementById('standing-keeper').classList.remove('centerTop');
+            document.getElementById('standing-keeper').classList.remove('centerMiddle');
+            document.getElementById('standing-keeper').classList.remove('centerBottom');
+            document.getElementById('standing-keeper').classList.remove('rightTop');
+            document.getElementById('standing-keeper').classList.remove('rightMiddle');
+            document.getElementById('standing-keeper').classList.remove('rightBottom');
         }if(buton.target.className === 'buton3'){
             document.getElementById('ball').classList.add('leftBottom');
             document.getElementById('ball').classList.remove('leftTop');
@@ -37,6 +55,16 @@ export const Goalkeeper = () => {
             document.getElementById('ball').classList.remove('rightTop');
             document.getElementById('ball').classList.remove('rightMiddle');
             document.getElementById('ball').classList.remove('rightBottom');
+
+            document.getElementById('standing-keeper').classList.add('leftBottom');
+            document.getElementById('standing-keeper').classList.remove('leftTop');
+            document.getElementById('standing-keeper').classList.remove('leftMiddle');
+            document.getElementById('standing-keeper').classList.remove('centerTop');
+            document.getElementById('standing-keeper').classList.remove('centerMiddle');
+            document.getElementById('standing-keeper').classList.remove('centerBottom');
+            document.getElementById('standing-keeper').classList.remove('rightTop');
+            document.getElementById('standing-keeper').classList.remove('rightMiddle');
+            document.getElementById('standing-keeper').classList.remove('rightBottom');
         }if(buton.target.className === 'buton4'){
             document.getElementById('ball').classList.add('centerTop');
             document.getElementById('ball').classList.remove('leftTop');
@@ -47,6 +75,16 @@ export const Goalkeeper = () => {
             document.getElementById('ball').classList.remove('rightTop');
             document.getElementById('ball').classList.remove('rightMiddle');
             document.getElementById('ball').classList.remove('rightBottom');
+
+            document.getElementById('standing-keeper').classList.add('centerTop');
+            document.getElementById('standing-keeper').classList.remove('leftTop');
+            document.getElementById('standing-keeper').classList.remove('leftMiddle');
+            document.getElementById('standing-keeper').classList.remove('leftBottom');
+            document.getElementById('standing-keeper').classList.remove('centerMiddle');
+            document.getElementById('standing-keeper').classList.remove('centerBottom');
+            document.getElementById('standing-keeper').classList.remove('rightTop');
+            document.getElementById('standing-keeper').classList.remove('rightMiddle');
+            document.getElementById('standing-keeper').classList.remove('rightBottom');
         }if(buton.target.className === 'buton5'){
             document.getElementById('ball').classList.add('centerMiddle');
             document.getElementById('ball').classList.remove('leftTop');
@@ -57,6 +95,16 @@ export const Goalkeeper = () => {
             document.getElementById('ball').classList.remove('rightTop');
             document.getElementById('ball').classList.remove('rightMiddle');
             document.getElementById('ball').classList.remove('rightBottom');
+
+            document.getElementById('standing-keeper').classList.add('centerMiddle');
+            document.getElementById('standing-keeper').classList.remove('leftTop');
+            document.getElementById('standing-keeper').classList.remove('leftMiddle');
+            document.getElementById('standing-keeper').classList.remove('leftBottom');
+            document.getElementById('standing-keeper').classList.remove('centerTop');
+            document.getElementById('standing-keeper').classList.remove('centerBottom');
+            document.getElementById('standing-keeper').classList.remove('rightTop');
+            document.getElementById('standing-keeper').classList.remove('rightMiddle');
+            document.getElementById('standing-keeper').classList.remove('rightBottom');
         }if(buton.target.className === 'buton6'){
             document.getElementById('ball').classList.add('centerBottom');
             document.getElementById('ball').classList.remove('leftTop');
@@ -67,6 +115,16 @@ export const Goalkeeper = () => {
             document.getElementById('ball').classList.remove('rightTop');
             document.getElementById('ball').classList.remove('rightMiddle');
             document.getElementById('ball').classList.remove('rightBottom');
+
+            document.getElementById('standing-keeper').classList.add('centerBottom');
+            document.getElementById('standing-keeper').classList.remove('leftTop');
+            document.getElementById('standing-keeper').classList.remove('leftMiddle');
+            document.getElementById('standing-keeper').classList.remove('leftBottom');
+            document.getElementById('standing-keeper').classList.remove('centerTop');
+            document.getElementById('standing-keeper').classList.remove('centerMiddle');
+            document.getElementById('standing-keeper').classList.remove('rightTop');
+            document.getElementById('standing-keeper').classList.remove('rightMiddle');
+            document.getElementById('standing-keeper').classList.remove('rightBottom');
         }if(buton.target.className === 'buton7'){
             document.getElementById('ball').classList.add('rightTop');
             document.getElementById('ball').classList.remove('leftTop');
@@ -77,6 +135,16 @@ export const Goalkeeper = () => {
             document.getElementById('ball').classList.remove('centerBottom');
             document.getElementById('ball').classList.remove('rightMiddle');
             document.getElementById('ball').classList.remove('rightBottom');
+
+            document.getElementById('standing-keeper').classList.add('rightTop');
+            document.getElementById('standing-keeper').classList.remove('leftTop');
+            document.getElementById('standing-keeper').classList.remove('leftMiddle');
+            document.getElementById('standing-keeper').classList.remove('leftBottom');
+            document.getElementById('standing-keeper').classList.remove('centerTop');
+            document.getElementById('standing-keeper').classList.remove('centerMiddle');
+            document.getElementById('standing-keeper').classList.remove('centerBottom');
+            document.getElementById('standing-keeper').classList.remove('rightMiddle');
+            document.getElementById('standing-keeper').classList.remove('rightBottom');
         }if(buton.target.className === 'buton8'){
             document.getElementById('ball').classList.add('rightMiddle');
             document.getElementById('ball').classList.remove('leftTop');
@@ -87,6 +155,16 @@ export const Goalkeeper = () => {
             document.getElementById('ball').classList.remove('centerBottom');
             document.getElementById('ball').classList.remove('rightTop');
             document.getElementById('ball').classList.remove('rightBottom');
+
+            document.getElementById('standing-keeper').classList.add('rightMiddle');
+            document.getElementById('standing-keeper').classList.remove('leftTop');
+            document.getElementById('standing-keeper').classList.remove('leftMiddle');
+            document.getElementById('standing-keeper').classList.remove('leftBottom');
+            document.getElementById('standing-keeper').classList.remove('centerTop');
+            document.getElementById('standing-keeper').classList.remove('centerMiddle');
+            document.getElementById('standing-keeper').classList.remove('centerBottom');
+            document.getElementById('standing-keeper').classList.remove('rightTop');
+            document.getElementById('standing-keeper').classList.remove('rightBottom');
         }if(buton.target.className === 'buton9'){
             document.getElementById('ball').classList.add('rightBottom');
             document.getElementById('ball').classList.remove('leftTop');
@@ -97,25 +175,35 @@ export const Goalkeeper = () => {
             document.getElementById('ball').classList.remove('centerBottom');
             document.getElementById('ball').classList.remove('rightTop');
             document.getElementById('ball').classList.remove('rightMiddle');
+
+            document.getElementById('standing-keeper').classList.add('rightBottom');
+            document.getElementById('standing-keeper').classList.remove('leftTop');
+            document.getElementById('standing-keeper').classList.remove('leftMiddle');
+            document.getElementById('standing-keeper').classList.remove('leftBottom');
+            document.getElementById('standing-keeper').classList.remove('centerTop');
+            document.getElementById('standing-keeper').classList.remove('centerMiddle');
+            document.getElementById('standing-keeper').classList.remove('centerBottom');
+            document.getElementById('standing-keeper').classList.remove('rightTop');
+            document.getElementById('standing-keeper').classList.remove('rightMiddle');
         }
     }
     return (
         <>
         <div style={{display: 'flex', justifyContent: 'center', position: 'absolute', marginBottom: '170px'}}>
                 <div style={{display: 'grid', justifyContent: 'center'}}>
-                    <button className='buton1' style={{width: '220px', height: '95px', background: 'transparent'}} onClick={(e) => shoot(e)}>Left Top</button>
-                    <button className='buton2' style={{width: '220px', height: '95px', background: 'transparent'}} onClick={(e) => shoot(e)}>Left Middle</button>
-                    <button className='buton3' style={{width: '220px', height: '95px', background: 'transparent'}} onClick={(e) => shoot(e)}>Left Bottom</button>
+                    <button className='buton1' style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
+                    <button className='buton2' style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
+                    <button className='buton3' style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
                 </div>
                 <div style={{display: 'grid', justifyContent: 'center'}}>
-                    <button className='buton4' style={{width: '220px', height: '95px', background: 'transparent'}} onClick={(e) => shoot(e)}>Center Top</button>
-                    <button className='buton5' style={{width: '220px', height: '95px', background: 'transparent'}} onClick={(e) => shoot(e)}>Center Middle</button>
-                    <button className='buton6' style={{width: '220px', height: '95px', background: 'transparent'}} onClick={(e) => shoot(e)}>Center Bottom</button>
+                    <button className='buton4' style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
+                    <button className='buton5' style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
+                    <button className='buton6' style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
                 </div>
                 <div style={{display: 'grid', justifyContent: 'center'}}>
-                    <button className='buton7' style={{width: '220px', height: '95px', background: 'transparent'}} onClick={(e) => shoot(e)}>Right Top</button>
-                    <button className='buton8' style={{width: '220px', height: '95px', background: 'transparent'}} onClick={(e) => shoot(e)}>Right Middle</button>
-                    <button className='buton9' style={{width: '220px', height: '95px', background: 'transparent'}} onClick={(e) => shoot(e)}>Right Bottom</button>
+                    <button className='buton7' style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
+                    <button className='buton8' style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
+                    <button className='buton9' style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
                 </div>
         </div>
         
