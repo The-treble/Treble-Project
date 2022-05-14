@@ -17,8 +17,6 @@ function NavBar() {
                     <>
                     <NavLink to='/' activeStyle>Home</NavLink>
                     <NavLink to='/games' activeStyle>Games</NavLink>
-                    <NavLink to='/counter' activeStyle>Counter</NavLink>
-                    <NavLink to='/fetch-data' activeStyle>Forecast</NavLink>
                     <NavLink to='/community' activeStyle>Community</NavLink>
                     </>
                
@@ -28,7 +26,7 @@ function NavBar() {
                     </NavBtn>
                 ) : (
                     <NavBtn>
-                        <NavBtnLink to='/log-in'>Sign In</NavBtnLink>
+                        <NavBtnLink to='/login'>Sign In</NavBtnLink>
                     </NavBtn>
                 )}  
             </NavMenu>

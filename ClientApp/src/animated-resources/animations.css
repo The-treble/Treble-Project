@@ -1,3 +1,50 @@
+.exit {
+    width: 150px;
+    height: 50px;
+    border-radius: 4px;
+    background: #0D6769;
+    padding: 10px 22px;
+    color: #8FBC94;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    position: absolute;
+    left: 100px;
+    top: 380px;
+}
+
+.nextButton {
+    width: 150px;
+    height: 50px;
+    border-radius: 4px;
+    background: #0D6769;
+    padding: 10px 22px;
+    color: #8FBC94;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    position: absolute;
+    right: 100px;
+    top: 380px;
+}
+
+.nextButton:hover{
+        transition: all 0.2s ease-in-out;
+        background: #8FBC94;
+        color: #0D6769;
+}
+
+.exit:hover{
+    transition: all 0.2s ease-in-out;
+    background: #8FBC94;
+    color: #0D6769;
+}
+
+
 #ball.rightTop{
     animation: ball-right-top 1s ease-in;
     transform: rotateZ(-60deg) translateY(20%) translateX(8%);

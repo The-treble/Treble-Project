@@ -1,212 +1,266 @@
 import './animations.css';
 import { useState } from 'react';
+import { useHistory } from "react-router-dom";
+import Alert from '@mui/material/Alert';
 
 export const Goalkeeper = () => {
+    const history = useHistory();
+    const [buttonDisabledState, setButtonDisabledState] = useState(false);
+    const [current, setCurrent] = useState(0);
+    const [score, setScore] = useState(0);
+    const [alert, setAlert] = useState("");
+    const [correctAnswer, setCorrectAnswer] = useState("");
+    var list = ['leftTop', 'centerBottom', 'leftMiddle'];
+    var match = [
+        {
+            player: "Player1",
+            match: "Match1"
+        },
+        {
+            player: "Player2",
+            match: "Match2"
+        },
+        {
+            player: "Player3",
+            match: "Match3",
+        }
+    ]
+    var possibilities = ['leftTop', 'leftMiddle', 'leftBottom', 'centerTop', 'centerMiddle', 'centerBottom', 'rightTop', 'rightMiddle', 'rightBottom'];
 
     function shoot(buton){
+
         if(buton.target.className === 'buton1'){
             document.getElementById('ball').classList.add('leftTop');
-            document.getElementById('ball').classList.remove('leftMiddle');
-            document.getElementById('ball').classList.remove('leftBottom');
-            document.getElementById('ball').classList.remove('centerTop');
-            document.getElementById('ball').classList.remove('centerMiddle');
-            document.getElementById('ball').classList.remove('centerBottom');
-            document.getElementById('ball').classList.remove('rightTop');
-            document.getElementById('ball').classList.remove('rightMiddle');
-            document.getElementById('ball').classList.remove('rightBottom');
+            possibilities.forEach(element => {
+                if(element !== 'leftTop'){
+                    document.getElementById('ball').classList.remove(element);
+                }
+            })
 
-            document.getElementById('standing-keeper').classList.add('leftTop');
-            document.getElementById('standing-keeper').classList.remove('leftMiddle');
-            document.getElementById('standing-keeper').classList.remove('leftBottom');
-            document.getElementById('standing-keeper').classList.remove('centerTop');
-            document.getElementById('standing-keeper').classList.remove('centerMiddle');
-            document.getElementById('standing-keeper').classList.remove('centerBottom');
-            document.getElementById('standing-keeper').classList.remove('rightTop');
-            document.getElementById('standing-keeper').classList.remove('rightMiddle');
-            document.getElementById('standing-keeper').classList.remove('rightBottom');
-
+            if(list[current] === 'leftTop'){
+                setScore(score + 1);
+                setAlert("correct");
+            }else{
+                setAlert("incorrect")
+            }
         }if(buton.target.className === 'buton2'){
             document.getElementById('ball').classList.add('leftMiddle');
-            document.getElementById('ball').classList.remove('leftTop');
-            document.getElementById('ball').classList.remove('leftBottom');
-            document.getElementById('ball').classList.remove('centerTop');
-            document.getElementById('ball').classList.remove('centerMiddle');
-            document.getElementById('ball').classList.remove('centerBottom');
-            document.getElementById('ball').classList.remove('rightTop');
-            document.getElementById('ball').classList.remove('rightMiddle');
-            document.getElementById('ball').classList.remove('rightBottom');
+            possibilities.forEach(element => {
+                if(element !== 'leftMiddle'){
+                    document.getElementById('ball').classList.remove(element);
+                }
+            })
 
-            document.getElementById('standing-keeper').classList.add('leftMiddle');
-            document.getElementById('standing-keeper').classList.remove('leftTop');
-            document.getElementById('standing-keeper').classList.remove('leftBottom');
-            document.getElementById('standing-keeper').classList.remove('centerTop');
-            document.getElementById('standing-keeper').classList.remove('centerMiddle');
-            document.getElementById('standing-keeper').classList.remove('centerBottom');
-            document.getElementById('standing-keeper').classList.remove('rightTop');
-            document.getElementById('standing-keeper').classList.remove('rightMiddle');
-            document.getElementById('standing-keeper').classList.remove('rightBottom');
+            if(list[current] === 'leftMiddle'){
+                setScore(score + 1);
+            }
         }if(buton.target.className === 'buton3'){
             document.getElementById('ball').classList.add('leftBottom');
-            document.getElementById('ball').classList.remove('leftTop');
-            document.getElementById('ball').classList.remove('leftMiddle');
-            document.getElementById('ball').classList.remove('centerTop');
-            document.getElementById('ball').classList.remove('centerMiddle');
-            document.getElementById('ball').classList.remove('centerBottom');
-            document.getElementById('ball').classList.remove('rightTop');
-            document.getElementById('ball').classList.remove('rightMiddle');
-            document.getElementById('ball').classList.remove('rightBottom');
+            possibilities.forEach(element => {
+                if(element !== 'leftBottom'){
+                    document.getElementById('ball').classList.remove(element);
+                }
+            })
 
-            document.getElementById('standing-keeper').classList.add('leftBottom');
-            document.getElementById('standing-keeper').classList.remove('leftTop');
-            document.getElementById('standing-keeper').classList.remove('leftMiddle');
-            document.getElementById('standing-keeper').classList.remove('centerTop');
-            document.getElementById('standing-keeper').classList.remove('centerMiddle');
-            document.getElementById('standing-keeper').classList.remove('centerBottom');
-            document.getElementById('standing-keeper').classList.remove('rightTop');
-            document.getElementById('standing-keeper').classList.remove('rightMiddle');
-            document.getElementById('standing-keeper').classList.remove('rightBottom');
+            if(list[current] === 'leftBottom'){
+                setScore(score + 1);
+                setAlert("correct");
+            }else{
+                setAlert("incorrect")
+            }
+
         }if(buton.target.className === 'buton4'){
             document.getElementById('ball').classList.add('centerTop');
-            document.getElementById('ball').classList.remove('leftTop');
-            document.getElementById('ball').classList.remove('leftMiddle');
-            document.getElementById('ball').classList.remove('leftBottom');
-            document.getElementById('ball').classList.remove('centerMiddle');
-            document.getElementById('ball').classList.remove('centerBottom');
-            document.getElementById('ball').classList.remove('rightTop');
-            document.getElementById('ball').classList.remove('rightMiddle');
-            document.getElementById('ball').classList.remove('rightBottom');
+            possibilities.forEach(element => {
+                if(element !== 'centerTop'){
+                    document.getElementById('ball').classList.remove(element);
+                }
+            })
 
-            document.getElementById('standing-keeper').classList.add('centerTop');
-            document.getElementById('standing-keeper').classList.remove('leftTop');
-            document.getElementById('standing-keeper').classList.remove('leftMiddle');
-            document.getElementById('standing-keeper').classList.remove('leftBottom');
-            document.getElementById('standing-keeper').classList.remove('centerMiddle');
-            document.getElementById('standing-keeper').classList.remove('centerBottom');
-            document.getElementById('standing-keeper').classList.remove('rightTop');
-            document.getElementById('standing-keeper').classList.remove('rightMiddle');
-            document.getElementById('standing-keeper').classList.remove('rightBottom');
+            if(list[current] === 'centerTop'){
+                setScore(score + 1);
+                setAlert("correct");
+            }else{
+                setAlert("incorrect")
+            }
         }if(buton.target.className === 'buton5'){
             document.getElementById('ball').classList.add('centerMiddle');
-            document.getElementById('ball').classList.remove('leftTop');
-            document.getElementById('ball').classList.remove('leftMiddle');
-            document.getElementById('ball').classList.remove('leftBottom');
-            document.getElementById('ball').classList.remove('centerTop');
-            document.getElementById('ball').classList.remove('centerBottom');
-            document.getElementById('ball').classList.remove('rightTop');
-            document.getElementById('ball').classList.remove('rightMiddle');
-            document.getElementById('ball').classList.remove('rightBottom');
+            possibilities.forEach(element => {
+                if(element !== 'centerMiddle'){
+                    document.getElementById('ball').classList.remove(element);
+                }
+            })
 
-            document.getElementById('standing-keeper').classList.add('centerMiddle');
-            document.getElementById('standing-keeper').classList.remove('leftTop');
-            document.getElementById('standing-keeper').classList.remove('leftMiddle');
-            document.getElementById('standing-keeper').classList.remove('leftBottom');
-            document.getElementById('standing-keeper').classList.remove('centerTop');
-            document.getElementById('standing-keeper').classList.remove('centerBottom');
-            document.getElementById('standing-keeper').classList.remove('rightTop');
-            document.getElementById('standing-keeper').classList.remove('rightMiddle');
-            document.getElementById('standing-keeper').classList.remove('rightBottom');
+            if(list[current] === 'centerMiddle'){
+                setScore(score + 1);
+                setAlert("correct");
+            }else{
+                setAlert("incorrect")
+            }
         }if(buton.target.className === 'buton6'){
             document.getElementById('ball').classList.add('centerBottom');
-            document.getElementById('ball').classList.remove('leftTop');
-            document.getElementById('ball').classList.remove('leftMiddle');
-            document.getElementById('ball').classList.remove('leftBottom');
-            document.getElementById('ball').classList.remove('centerTop');
-            document.getElementById('ball').classList.remove('centerMiddle');
-            document.getElementById('ball').classList.remove('rightTop');
-            document.getElementById('ball').classList.remove('rightMiddle');
-            document.getElementById('ball').classList.remove('rightBottom');
+            possibilities.forEach(element => {
+                if(element !== 'centerBottom'){
+                    document.getElementById('ball').classList.remove(element);
+                }
+            })  
 
-            document.getElementById('standing-keeper').classList.add('centerBottom');
-            document.getElementById('standing-keeper').classList.remove('leftTop');
-            document.getElementById('standing-keeper').classList.remove('leftMiddle');
-            document.getElementById('standing-keeper').classList.remove('leftBottom');
-            document.getElementById('standing-keeper').classList.remove('centerTop');
-            document.getElementById('standing-keeper').classList.remove('centerMiddle');
-            document.getElementById('standing-keeper').classList.remove('rightTop');
-            document.getElementById('standing-keeper').classList.remove('rightMiddle');
-            document.getElementById('standing-keeper').classList.remove('rightBottom');
+            if(list[current] === 'centerBottom'){
+                setScore(score + 1);
+                setAlert("correct");
+            }else{
+                setAlert("incorrect")
+            }
         }if(buton.target.className === 'buton7'){
             document.getElementById('ball').classList.add('rightTop');
-            document.getElementById('ball').classList.remove('leftTop');
-            document.getElementById('ball').classList.remove('leftMiddle');
-            document.getElementById('ball').classList.remove('leftBottom');
-            document.getElementById('ball').classList.remove('centerTop');
-            document.getElementById('ball').classList.remove('centerMiddle');
-            document.getElementById('ball').classList.remove('centerBottom');
-            document.getElementById('ball').classList.remove('rightMiddle');
-            document.getElementById('ball').classList.remove('rightBottom');
+            possibilities.forEach(element => {
+                if(element !== 'rightTop'){
+                    document.getElementById('ball').classList.remove(element);
+                }
+            })
 
-            document.getElementById('standing-keeper').classList.add('rightTop');
-            document.getElementById('standing-keeper').classList.remove('leftTop');
-            document.getElementById('standing-keeper').classList.remove('leftMiddle');
-            document.getElementById('standing-keeper').classList.remove('leftBottom');
-            document.getElementById('standing-keeper').classList.remove('centerTop');
-            document.getElementById('standing-keeper').classList.remove('centerMiddle');
-            document.getElementById('standing-keeper').classList.remove('centerBottom');
-            document.getElementById('standing-keeper').classList.remove('rightMiddle');
-            document.getElementById('standing-keeper').classList.remove('rightBottom');
+            if(list[current] === 'rightTop'){
+                setScore(score + 1);
+                setAlert("correct");
+            }else{
+                setAlert("incorrect")
+            }
         }if(buton.target.className === 'buton8'){
             document.getElementById('ball').classList.add('rightMiddle');
-            document.getElementById('ball').classList.remove('leftTop');
-            document.getElementById('ball').classList.remove('leftMiddle');
-            document.getElementById('ball').classList.remove('leftBottom');
-            document.getElementById('ball').classList.remove('centerTop');
-            document.getElementById('ball').classList.remove('centerMiddle');
-            document.getElementById('ball').classList.remove('centerBottom');
-            document.getElementById('ball').classList.remove('rightTop');
-            document.getElementById('ball').classList.remove('rightBottom');
+            possibilities.forEach(element => {
+                if(element !== 'rightMiddle'){
+                    document.getElementById('ball').classList.remove(element);
+                }
+            })
 
-            document.getElementById('standing-keeper').classList.add('rightMiddle');
-            document.getElementById('standing-keeper').classList.remove('leftTop');
-            document.getElementById('standing-keeper').classList.remove('leftMiddle');
-            document.getElementById('standing-keeper').classList.remove('leftBottom');
-            document.getElementById('standing-keeper').classList.remove('centerTop');
-            document.getElementById('standing-keeper').classList.remove('centerMiddle');
-            document.getElementById('standing-keeper').classList.remove('centerBottom');
-            document.getElementById('standing-keeper').classList.remove('rightTop');
-            document.getElementById('standing-keeper').classList.remove('rightBottom');
+            if(list[current] === 'rightMiddle'){
+                setScore(score + 1);
+                setAlert("correct");
+            }else{
+                setAlert("incorrect")
+            }
         }if(buton.target.className === 'buton9'){
             document.getElementById('ball').classList.add('rightBottom');
-            document.getElementById('ball').classList.remove('leftTop');
-            document.getElementById('ball').classList.remove('leftMiddle');
-            document.getElementById('ball').classList.remove('leftBottom');
-            document.getElementById('ball').classList.remove('centerTop');
-            document.getElementById('ball').classList.remove('centerMiddle');
-            document.getElementById('ball').classList.remove('centerBottom');
-            document.getElementById('ball').classList.remove('rightTop');
-            document.getElementById('ball').classList.remove('rightMiddle');
+            possibilities.forEach(element => {
+                if(element !== 'rightBottom'){
+                    document.getElementById('ball').classList.remove(element);
+                }
+            })
 
-            document.getElementById('standing-keeper').classList.add('rightBottom');
-            document.getElementById('standing-keeper').classList.remove('leftTop');
-            document.getElementById('standing-keeper').classList.remove('leftMiddle');
-            document.getElementById('standing-keeper').classList.remove('leftBottom');
-            document.getElementById('standing-keeper').classList.remove('centerTop');
-            document.getElementById('standing-keeper').classList.remove('centerMiddle');
-            document.getElementById('standing-keeper').classList.remove('centerBottom');
-            document.getElementById('standing-keeper').classList.remove('rightTop');
-            document.getElementById('standing-keeper').classList.remove('rightMiddle');
+            if(list[current] === 'rightBottom'){
+                setScore(score + 1);
+                setAlert("correct");
+            }else{
+                setAlert("incorrect")
+            }
         }
+
+        //portarul va sari unde a sarit si in timpul meciului irl
+        document.getElementById('standing-keeper').classList.add(list[current]);
+        possibilities.forEach(element => {
+            if(element !== list[current]){
+                document.getElementById('standing-keeper').classList.remove(element);
+            }
+        });
+
+        setButtonDisabledState(true);
+        switch(list[current]){
+            case 'leftTop':
+                setCorrectAnswer("Top Left");
+                break;
+            case 'leftMiddle':
+                setCorrectAnswer("Middle Left");
+                break;
+            case 'leftBottom':
+                setCorrectAnswer("Bottom Left");
+                break;
+            case 'centerTop':
+                setCorrectAnswer("Top Center");
+                break;
+            case 'centerMiddle':
+                setCorrectAnswer("Middle Center");
+                break;
+            case 'centerBottom':
+                setCorrectAnswer("Bottom Center");
+                break;
+            case 'rightTop':
+                setCorrectAnswer("Top Right");
+                break;
+            case 'rightMiddle':
+                setCorrectAnswer("Middle Right");
+                break;
+            case 'rightBottom':
+                setCorrectAnswer("Bottom Right");
+                break;
+            default:
+                console.log("cv nu i ok");
+        }
+    }
+
+    function nextButtonClicked(){
+
+            setButtonDisabledState(false);
+            setAlert("");
+            setCorrectAnswer("");
+            possibilities.forEach(element => {
+                document.getElementById('standing-keeper').classList.remove(element);
+                document.getElementById('ball').classList.remove(element);
+            })
+            if(current === list.length - 1){
+                console.log("Ba is in else if");
+            }else{
+                console.log("Ba is unde ar trb sa fiu");
+                setCurrent(current + 1);
+            }
+    }
+
+    function exitButtonClicked(){
+        
+        setButtonDisabledState(false);
+        possibilities.forEach(element => {
+            document.getElementById('standing-keeper').classList.remove(element);
+            document.getElementById('ball').classList.remove(element);
+        })
+        setCurrent(0);
+        setAlert("");
+        history.push("/games");
+        
     }
     return (
         <>
         <div style={{display: 'flex', justifyContent: 'center', position: 'absolute', marginBottom: '170px'}}>
                 <div style={{display: 'grid', justifyContent: 'center'}}>
-                    <button className='buton1' style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
-                    <button className='buton2' style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
-                    <button className='buton3' style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
+                    <button className='buton1' disabled={buttonDisabledState} style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
+                    <button className='buton2' disabled={buttonDisabledState} style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
+                    <button className='buton3' disabled={buttonDisabledState} style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
                 </div>
                 <div style={{display: 'grid', justifyContent: 'center'}}>
-                    <button className='buton4' style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
-                    <button className='buton5' style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
-                    <button className='buton6' style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
+                    <button className='buton4' disabled={buttonDisabledState} style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
+                    <button className='buton5' disabled={buttonDisabledState} style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
+                    <button className='buton6' disabled={buttonDisabledState} style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
                 </div>
                 <div style={{display: 'grid', justifyContent: 'center'}}>
-                    <button className='buton7' style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
-                    <button className='buton8' style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
-                    <button className='buton9' style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
+                    <button className='buton7' disabled={buttonDisabledState} style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
+                    <button className='buton8' disabled={buttonDisabledState} style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
+                    <button className='buton9' disabled={buttonDisabledState} style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
                 </div>
         </div>
-        
+
+        <h2 style={{position: 'absolute', top: '150px', left: '550px', color: '#8FBC94', textShadow: '-0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.4px 0.4px 0 #000, 0.4px 0.4px 0 #000'}}>{match[current].player}</h2>
+        <h2 style={{position: 'absolute', top: '150px', right: '550px', color: '#8FBC94', textShadow: '-0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.4px 0.4px 0 #000, 0.4px 0.4px 0 #000'}}>{match[current].match}</h2>
+        <h2 style={{position: 'absolute', top: '150px', left: '70px', color: '#8FBC94', textShadow: '-0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.4px 0.4px 0 #000, 0.4px 0.4px 0 #000'}}>Penalties: {current + 1} / {list.length}</h2>
+        <h2 style={{position: 'absolute', top: '150px', right: '70px', color: '#8FBC94', textShadow: '-0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.4px 0.4px 0 #000, 0.4px 0.4px 0 #000'}}>Score: {score} / {list.length}</h2>
+
+        <button className='exit' onClick={exitButtonClicked}>EXIT GAME</button>
+        <button className='nextButton' onClick={nextButtonClicked}>NEXT PENALTY</button>  
+
+        {alert === "correct" && (
+            <Alert style={{position: 'absolute', top: '600px', fontWeight: 'bold'}} severity='success'> Your answer was correct!</Alert>
+        )}
+        {alert === "incorrect" && (
+            <Alert style={{position: 'absolute', top: '600px', fontWeight: 'bold'}} severity='error'> Your answer was incorrect! The correct answer was {correctAnswer}!</Alert>
+        )}
+       
         <svg width="700" height="550" viewBox="0 0 2998 2047" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="goalkeepers">
             <g id="undraw_goal_-0-v5v 1">

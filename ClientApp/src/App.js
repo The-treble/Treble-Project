@@ -10,6 +10,8 @@ import Quiz  from './components/Quiz';
 import { Community } from './components/Community';
 
 import './custom.css'
+import Login from './components/Login';
+import Register from './components/Register';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -24,6 +26,8 @@ export default class App extends Component {
         <Route path='/penalty' component={Penalty} />
         <Route path='/quiz' component={Quiz} />
         <Route path='/community' component={Community} />
+        <Route path='/login' component={Login} />
+        <Route path='/register' component={Register} />
       </Layout>
     );
   }

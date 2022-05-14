@@ -45,7 +45,7 @@ function Quiz() {
   
             setAlert("");
                       
-        }, 1000);
+        }, 1500);
     }
 
     const prevSlide = () => {
@@ -70,7 +70,7 @@ function Quiz() {
         }else{
             setAlert("incorrect");
         }
-        if(answeredQuestions != Data.length - 1){
+        if(answeredQuestions !== Data.length - 1){
             nextSlide();
         }else{
             setTimeout(function (){
@@ -90,7 +90,7 @@ function Quiz() {
                         <Question><h6>{Data[currentSlide].mesaj}</h6></Question>
                     </div><div style={{ width: '95%', justifyContent: 'center', display: 'grid', marginTop: '50px' }}>
                             <Answer value={answer} placeholder='Enter your answer here...' onChange={(e) => { setAnswer(e.target.value); console.log(answer); } }></Answer>
-                            {(alert == "correct") ?
+                            {(alert === "correct") ?
                                 (
                                     <Alert severity="success"
                                         style={{ width: '150%', marginTop: '10px', height: '45px' }}>Your answer was correct!</Alert>
@@ -98,7 +98,7 @@ function Quiz() {
                                 (
                                     <> </>
                                 )}
-                            {(alert == "incorrect") ?
+                            {(alert === "incorrect") ?
                                 (
                                     <Alert severity="error"
                                         style={{ width: '150%', marginTop: '10px', height: '45px' }}>Your answer was incorrect!</Alert>
