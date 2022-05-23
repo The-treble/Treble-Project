@@ -4,7 +4,6 @@ import {FcPrevious, FcNext} from 'react-icons/fc'
 
 export const Background = styled.div`
     width: 100%;
-    padding: 78px 0px;
     background-color: #191919;
     align-items: center;
     justify-content: center;
@@ -12,13 +11,16 @@ export const Background = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 95vh;
 `
 
 export const Wrapper = styled.div`
     width: 100%;
+    height: 95vh;
     justify-content: center;
     display: grid;
     align-items: center;
+    background: rgba(0, 0, 0, 0.4);
 `
 
 export const Buttons = styled.div`
@@ -88,7 +90,7 @@ export const Next = styled.button`
 
 export const Img = styled.img`
     width: 300px;
-    height: 350px;
+    height: 300px;
     border-radius: 10px 10px 0px 0px;
 `
 

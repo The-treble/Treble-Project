@@ -10,6 +10,7 @@ export const Goalkeeper = () => {
     const [score, setScore] = useState(0);
     const [alert, setAlert] = useState("");
     const [correctAnswer, setCorrectAnswer] = useState("");
+    const [gameEnded, setGameEnded] = useState(false);
     var list = ['leftTop', 'centerBottom', 'leftMiddle'];
     var match = [
         {
@@ -163,6 +164,20 @@ export const Goalkeeper = () => {
             }
         });
 
+        if(current === list.length - 1){
+            setTimeout(function (){
+  
+                setGameEnded(true);
+                setAlert("");
+                          
+            }, 3000);
+            setTimeout(function (){
+
+                history.push('/games');
+
+            }, 6000);
+        }
+
         setButtonDisabledState(true);
         switch(list[current]){
             case 'leftTop':
@@ -228,39 +243,42 @@ export const Goalkeeper = () => {
     }
     return (
         <>
-        <div style={{display: 'flex', justifyContent: 'center', position: 'absolute', marginBottom: '170px'}}>
-                <div style={{display: 'grid', justifyContent: 'center'}}>
-                    <button className='buton1' disabled={buttonDisabledState} style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
-                    <button className='buton2' disabled={buttonDisabledState} style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
-                    <button className='buton3' disabled={buttonDisabledState} style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
+        {gameEnded === true && (
+            <h1 style={{color: '#8FBC94', fontFamily: 'Impact', fontStyle: 'italic',textShadow: '-0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.4px 0.4px 0 #000, 0.4px 0.4px 0 #000', fontSize: '54px'}}>Well played, your score is {score} out of {list.length}!</h1>
+        )}
+        {gameEnded === false && (
+        <><div style={{ display: 'flex', justifyContent: 'center', position: 'absolute', marginBottom: '170px' }}>
+                    <div style={{ display: 'grid', justifyContent: 'center' }}>
+                        <button className='buton1' disabled={buttonDisabledState} style={{ width: '220px', height: '95px', background: 'transparent', border: 'none' }} onClick={(e) => shoot(e)}></button>
+                        <button className='buton2' disabled={buttonDisabledState} style={{ width: '220px', height: '95px', background: 'transparent', border: 'none' }} onClick={(e) => shoot(e)}></button>
+                        <button className='buton3' disabled={buttonDisabledState} style={{ width: '220px', height: '95px', background: 'transparent', border: 'none' }} onClick={(e) => shoot(e)}></button>
+                    </div>
+                    <div style={{ display: 'grid', justifyContent: 'center' }}>
+                        <button className='buton4' disabled={buttonDisabledState} style={{ width: '220px', height: '95px', background: 'transparent', border: 'none' }} onClick={(e) => shoot(e)}></button>
+                        <button className='buton5' disabled={buttonDisabledState} style={{ width: '220px', height: '95px', background: 'transparent', border: 'none' }} onClick={(e) => shoot(e)}></button>
+                        <button className='buton6' disabled={buttonDisabledState} style={{ width: '220px', height: '95px', background: 'transparent', border: 'none' }} onClick={(e) => shoot(e)}></button>
+                    </div>
+                    <div style={{ display: 'grid', justifyContent: 'center' }}>
+                        <button className='buton7' disabled={buttonDisabledState} style={{ width: '220px', height: '95px', background: 'transparent', border: 'none' }} onClick={(e) => shoot(e)}></button>
+                        <button className='buton8' disabled={buttonDisabledState} style={{ width: '220px', height: '95px', background: 'transparent', border: 'none' }} onClick={(e) => shoot(e)}></button>
+                        <button className='buton9' disabled={buttonDisabledState} style={{ width: '220px', height: '95px', background: 'transparent', border: 'none' }} onClick={(e) => shoot(e)}></button>
+                    </div>
                 </div>
-                <div style={{display: 'grid', justifyContent: 'center'}}>
-                    <button className='buton4' disabled={buttonDisabledState} style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
-                    <button className='buton5' disabled={buttonDisabledState} style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
-                    <button className='buton6' disabled={buttonDisabledState} style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
-                </div>
-                <div style={{display: 'grid', justifyContent: 'center'}}>
-                    <button className='buton7' disabled={buttonDisabledState} style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
-                    <button className='buton8' disabled={buttonDisabledState} style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
-                    <button className='buton9' disabled={buttonDisabledState} style={{width: '220px', height: '95px', background: 'transparent', border: 'none'}} onClick={(e) => shoot(e)}></button>
-                </div>
-        </div>
-
-        <h2 style={{position: 'absolute', top: '150px', left: '550px', color: '#8FBC94', textShadow: '-0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.4px 0.4px 0 #000, 0.4px 0.4px 0 #000'}}>{match[current].player}</h2>
-        <h2 style={{position: 'absolute', top: '150px', right: '550px', color: '#8FBC94', textShadow: '-0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.4px 0.4px 0 #000, 0.4px 0.4px 0 #000'}}>{match[current].match}</h2>
-        <h2 style={{position: 'absolute', top: '150px', left: '70px', color: '#8FBC94', textShadow: '-0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.4px 0.4px 0 #000, 0.4px 0.4px 0 #000'}}>Penalties: {current + 1} / {list.length}</h2>
-        <h2 style={{position: 'absolute', top: '150px', right: '70px', color: '#8FBC94', textShadow: '-0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.4px 0.4px 0 #000, 0.4px 0.4px 0 #000'}}>Score: {score} / {list.length}</h2>
-
-        <button className='exit' onClick={exitButtonClicked}>EXIT GAME</button>
-        <button className='nextButton' onClick={nextButtonClicked}>NEXT PENALTY</button>  
-
+                <h2 style={{ position: 'absolute', top: '150px', left: '550px', color: '#8FBC94', textShadow: '-0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.4px 0.4px 0 #000, 0.4px 0.4px 0 #000' }}>{match[current].player}</h2>
+                <h2 style={{ position: 'absolute', top: '150px', right: '550px', color: '#8FBC94', textShadow: '-0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.4px 0.4px 0 #000, 0.4px 0.4px 0 #000' }}>{match[current].match}</h2>
+                <h2 style={{ position: 'absolute', top: '150px', left: '70px', color: '#8FBC94', textShadow: '-0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.4px 0.4px 0 #000, 0.4px 0.4px 0 #000' }}>Penalties: {current + 1} / {list.length}</h2>
+                <h2 style={{ position: 'absolute', top: '150px', right: '70px', color: '#8FBC94', textShadow: '-0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.4px 0.4px 0 #000, 0.4px 0.4px 0 #000' }}>Score: {score} / {list.length}</h2>
+                <button className='exit' onClick={exitButtonClicked} disabled={current === list.length - 1}>EXIT GAME</button>
+                <button className='nextButton' onClick={nextButtonClicked} disabled={current === list.length - 1}>NEXT PENALTY</button>
+                </>  
+        )}
         {alert === "correct" && (
             <Alert style={{position: 'absolute', top: '600px', fontWeight: 'bold'}} severity='success'> Your answer was correct!</Alert>
         )}
         {alert === "incorrect" && (
             <Alert style={{position: 'absolute', top: '600px', fontWeight: 'bold'}} severity='error'> Your answer was incorrect! The correct answer was {correctAnswer}!</Alert>
         )}
-       
+       {gameEnded === false && (
         <svg width="700" height="550" viewBox="0 0 2998 2047" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="goalkeepers">
             <g id="undraw_goal_-0-v5v 1">
@@ -408,8 +426,9 @@ export const Goalkeeper = () => {
             </linearGradient>
             </defs>
         </svg>
-
+        )}
     </>
+
         
     );
 }
